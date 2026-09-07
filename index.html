@@ -1518,6 +1518,12 @@
       closeModal();
     }
   });
+
+  if(new URLSearchParams(window.location.search).get('openQuote')){
+    openModal();
+    const cleanUrl = window.location.pathname + window.location.hash;
+    window.history.replaceState({}, document.title, cleanUrl);
+  }
 </script>
 
 </body>
