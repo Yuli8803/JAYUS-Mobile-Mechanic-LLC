@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jayus Mobile Mechanic — We Come To You</title>
-<meta name="description" content="Professional mobile auto care in DeKalb & the surrounding 20-mile radius. Oil changes, brakes, and maintenance at your home or office.">
+<title>Jayus Mobile Care — We Come To You</title>
+<meta name="description" content="Professional mobile auto care in DeKalb, Peru & the surrounding 20-mile radius. Oil changes, brakes, and maintenance at your home or office.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
   }
 
   *{ box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
+  html{ scroll-behavior:smooth; scroll-padding-top: 110px; }
   body{
     margin:0;
     font-family:'Inter', system-ui, sans-serif;
@@ -128,6 +128,10 @@
     text-transform:uppercase;
     color: var(--orange);
     margin-top:2px;
+  }
+  @media (max-width: 900px) and (min-width: 561px){
+    .brand{ font-size:15px; }
+    .brand img{ height:64px; }
   }
   .header-actions{
     display:flex;
@@ -324,7 +328,7 @@
   .step p{ color:var(--text-soft); font-size:15px; line-height:1.6; margin:0; }
 
   /* ---------- Services ---------- */
-  .services-section{ background: var(--grey); }
+  .services-section{ background: var(--grey); scroll-margin-top: 110px; }
   .services-grid{
     display:grid;
     grid-template-columns:repeat(4, 1fr);
@@ -351,18 +355,6 @@
     color: var(--orange);
   }
   .service-card h3{ font-size:17px; font-weight:700; }
-  .price-tag{
-    font-family:'Space Grotesk', sans-serif;
-    font-size:22px;
-    font-weight:700;
-    color: var(--navy);
-  }
-  .price-tag span{
-    font-size:13px;
-    font-weight:600;
-    color: var(--text-soft);
-    font-family:'Inter',sans-serif;
-  }
   .service-note-tag{
     font-size:12.5px;
     font-weight:600;
@@ -436,35 +428,6 @@
     margin-top:16px;
   }
   .radius-badge .dot{ width:8px; height:8px; border-radius:50%; background: var(--orange); }
-
-  /* ---------- Reviews ---------- */
-  .review-card{
-    max-width:640px;
-    margin:0 auto;
-    text-align:center;
-    background: var(--white);
-    border:1px solid var(--line);
-    border-radius: var(--radius);
-    padding:44px 36px;
-    box-shadow: var(--shadow);
-  }
-  .stars{ color: var(--yellow); font-size:20px; letter-spacing:3px; margin-bottom:18px; }
-  .review-card blockquote{
-    margin:0;
-    font-family:'Space Grotesk', sans-serif;
-    font-size:22px;
-    font-weight:600;
-    line-height:1.5;
-    color: var(--navy);
-  }
-  .review-card cite{
-    display:block;
-    margin-top:20px;
-    font-style:normal;
-    font-size:14.5px;
-    font-weight:600;
-    color: var(--text-soft);
-  }
 
   /* ---------- Footer ---------- */
   footer{
@@ -574,7 +537,7 @@
   .field-row{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
   @media (max-width:480px){ .field-row{ grid-template-columns:1fr; } }
   .field-row.two{ grid-template-columns:1fr 1fr; }
-  input[type="text"], input[type="tel"], input[type="date"]{
+  input[type="text"], input[type="tel"], input[type="date"], input[type="email"], textarea, select{
     width:100%;
     padding:11px 13px;
     border:1.5px solid var(--line);
@@ -585,11 +548,29 @@
     background: var(--grey);
     transition: border-color .15s ease;
   }
+  textarea{ resize:vertical; min-height:70px; }
+  select{ appearance:none; -webkit-appearance:none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2356657A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position: right 13px center; padding-right:36px; }
+  select:invalid{ color:#9AA7B8; }
   input::placeholder{ color:#9AA7B8; }
-  input[type="text"]:focus, input[type="tel"]:focus, input[type="date"]:focus{
+  input[type="text"]:focus, input[type="tel"]:focus, input[type="date"]:focus, input[type="email"]:focus, textarea:focus, select:focus{
     border-color: var(--orange);
     outline:none;
     background: var(--white);
+  }
+  .field-helper{ font-size:12px; color:var(--text-soft); margin:-2px 0 10px; }
+  .field-helper.vin-success{ color:#1E7F3E; font-weight:600; }
+  .field-helper.vin-error{ color:#C0392B; font-weight:600; }
+  .field-helper.vin-loading{ color: var(--orange); font-weight:600; }
+  .notice-box{
+    background: rgba(241,138,0,0.08);
+    border:1px solid rgba(241,138,0,0.3);
+    border-radius:9px;
+    padding:10px 12px;
+    font-size:12.5px;
+    font-weight:600;
+    color: var(--orange-dark);
+    line-height:1.5;
+    margin:12px 0 10px;
   }
   .checkbox-list{ display:flex; flex-direction:column; gap:10px; }
   .checkbox-item{
@@ -606,7 +587,6 @@
   .checkbox-item:hover{ border-color: var(--orange); }
   .checkbox-item input{ margin-right:10px; accent-color: var(--orange); width:16px; height:16px; }
   .checkbox-item .cb-label{ display:flex; align-items:center; }
-  .checkbox-item .cb-price{ font-weight:700; color: var(--navy); }
   .radio-group{ display:flex; gap:10px; }
   .radio-pill{
     flex:1;
@@ -635,6 +615,66 @@
     font-size:15.5px;
   }
   .required-hint{ font-size:12px; color:var(--text-soft); margin:-8px 0 18px; }
+  .required-legend{
+    font-size:12.5px;
+    font-weight:600;
+    color: var(--text-soft);
+    margin:0 0 18px;
+  }
+  .step-progress{ margin-bottom:18px; }
+  .step-progress-track{
+    width:100%;
+    height:6px;
+    border-radius:100px;
+    background: var(--grey);
+    overflow:hidden;
+  }
+  .step-progress-fill{
+    height:100%;
+    background: var(--orange);
+    border-radius:100px;
+    transition: width .3s ease;
+    width:25%;
+  }
+  .step-progress-label{
+    margin:8px 0 0;
+    font-size:12.5px;
+    font-weight:700;
+    color: var(--navy);
+  }
+  .form-step{ display:none; }
+  .form-step.active{ display:block; }
+  .step-nav{
+    display:flex;
+    gap:12px;
+    margin-top:6px;
+  }
+  .step-nav .btn{ flex:1; }
+  .step-nav .step-back{ flex:0 0 88px; }
+  .step-nav .modal-submit{ margin-top:0; white-space:normal; line-height:1.3; }
+  .req-star{ color:#C0392B; font-weight:700; }
+  input.field-invalid,
+  select.field-invalid,
+  textarea.field-invalid{
+    border-color:#C0392B !important;
+    background: rgba(192,57,43,0.06) !important;
+  }
+  .radio-group.field-invalid .radio-pill{
+    border-color:#C0392B;
+  }
+  .checkbox-item.field-invalid{
+    border-color:#C0392B;
+  }
+  .form-error{
+    font-size:13px;
+    font-weight:600;
+    color:#C0392B;
+    background: rgba(192,57,43,0.08);
+    border:1px solid rgba(192,57,43,0.25);
+    border-radius:8px;
+    padding:10px 12px;
+    margin:0 0 14px;
+  }
 
   /* Success state */
   .success-state{
@@ -670,9 +710,9 @@
 <header class="site-header">
   <div class="header-inner wrap">
     <div class="brand">
-      <img src="logo.svg" alt="Jayus Mobile Mechanic logo" onerror="this.style.display='none'">
+      <img src="logo.svg?v=2" alt="Jayus Mobile Care logo" onerror="this.style.display='none'">
       <div>
-        <span class="name">Jayus Mobile Mechanic</span>
+        <span class="name">Jayus Mobile Care</span>
         <small>We Come To You</small>
       </div>
     </div>
@@ -682,7 +722,7 @@
         <span class="call-full">Call/Text: (815) 814-3360</span>
         <span class="call-short">(815) 814-3360</span>
       </a>
-      <button class="btn btn-primary btn-small book-btn" type="button">Book Appointment</button>
+      <button class="btn btn-primary btn-small book-btn" type="button">Get a Free Quote</button>
     </div>
   </div>
 </header>
@@ -690,17 +730,18 @@
 <!-- ===================== HERO ===================== -->
 <section class="hero">
   <div class="wrap hero-content">
-    <span class="hero-eyebrow">Your Mobile Auto Repair Specialist — DeKalb, IL</span>
+    <span class="hero-eyebrow">Your Mobile Auto Repair Specialist — DeKalb &amp; Peru, IL</span>
     <h1 class="hero-title">We Come To You</h1>
     <p class="hero-sub">Convenient oil changes, brakes, and maintenance at your home or office. No shop, no waiting room, no wasted afternoon.</p>
     <p class="hero-tagline">Professional Mobile Auto Care You Can Trust</p>
     <div class="hero-actions">
-      <button class="btn btn-primary book-btn" type="button">Book Appointment</button>
-      <a href="#services" class="btn btn-ghost">Get a Free Quote</a>
+      <button class="btn btn-primary book-btn" type="button">Get a Free Quote</button>
+      <a href="#services" class="btn btn-ghost">View Our Services</a>
     </div>
     <ul class="trust-badges">
       <li><span class="tick">✓</span> Licensed &amp; Insured</li>
-      <li><span class="tick">✓</span> Serving DeKalb &amp; 20-Mile Radius</li>
+      <li><span class="tick">✓</span> Serving DeKalb, Peru &amp; Surrounding Areas — 20-Mile Radius (+$1.75/mile beyond)</li>
+      <li><span class="tick">✓</span> Hablamos Español</li>
     </ul>
   </div>
 </section>
@@ -739,9 +780,9 @@
 <section class="section-pad services-section" id="services">
   <div class="wrap">
     <div class="section-head">
-      <span class="kicker">Transparent pricing</span>
-      <h2>Services &amp; pricing, upfront</h2>
-      <p>No hidden fees, no surprise invoices — just honest quotes before we ever start a job.</p>
+      <span class="kicker">Our Services</span>
+      <h2>Preventative Maintenance Services</h2>
+      <p>As a dedicated preventative maintenance business, we focus on the routine care that keeps your vehicle running strong — no diagnostics, no major repairs, just honest, proactive maintenance.</p>
     </div>
     <div class="services-grid">
       <div class="service-card">
@@ -749,7 +790,6 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22v-2a4 4 0 0 1 4-4h3"/><path d="M14 14a4 4 0 0 0-4 4v4"/><circle cx="17" cy="7" r="4"/><path d="M17 3v1"/><path d="M13 7h1"/></svg>
         </div>
         <h3>Full Synthetic Oil Change</h3>
-        <div class="price-tag">$89 <span>starting at</span></div>
         <div class="service-note-tag">Most cars &amp; light trucks</div>
       </div>
       <div class="service-card">
@@ -757,27 +797,24 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M22 12h-4M6 12H2"/></svg>
         </div>
         <h3>Brake Pad Replacement</h3>
-        <div class="price-tag">$149 <span>/ axle</span></div>
-        <div class="service-note-tag">Pads, inspection &amp; road test</div>
+        <div class="service-note-tag">Pads &amp; rotors</div>
       </div>
       <div class="service-card">
         <div class="service-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="9" width="10" height="12" rx="2"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
         </div>
         <h3>Battery &amp; Wiper Replacement</h3>
-        <div class="price-tag">$45 <span>starting at</span></div>
-        <div class="service-note-tag">Parts &amp; labor included</div>
+        <div class="service-note-tag">Batteries, blades &amp; bulbs</div>
       </div>
       <div class="service-card">
         <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="7" y1="4" x2="7" y2="20"/><line x1="11" y1="4" x2="11" y2="20"/><line x1="15" y1="4" x2="15" y2="20"/><line x1="19" y1="4" x2="19" y2="20"/></svg>
         </div>
-        <h3>Diagnostic Check</h3>
-        <div class="price-tag">$75</div>
-        <div class="service-note-tag">Applied toward repair cost</div>
+        <h3>Engine &amp; Cabin Air Filter Replacement</h3>
+        <div class="service-note-tag">Keeps air clean &amp; airflow strong</div>
       </div>
     </div>
-    <p class="services-footnote">Need custom repairs? Call or Text <a href="tel:8158143360">(815) 814-3360</a> for a fast quote.</p>
+    <p class="services-footnote">Have a specific need? Call or Text <a href="tel:8158143360">(815) 814-3360</a> and we'll let you know how we can help.</p>
   </div>
 </section>
 
@@ -788,27 +825,17 @@
       <h3><span class="icon-chip">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       </span>Operating Hours</h3>
-      <div class="hours-row"><span>Monday – Saturday</span><span>8:00 AM – 6:00 PM</span></div>
-      <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
-      <div class="hours-row"><span>Emergency calls</span><span>By request</span></div>
+      <div class="hours-row"><span>Monday – Thursday</span><span>5:00 PM – 8:00 PM</span></div>
+      <div class="hours-row"><span>Friday</span><span>9:00 AM – 7:00 PM</span></div>
+      <div class="hours-row"><span>Saturday</span><span>5:00 PM – 8:00 PM</span></div>
+      <div class="hours-row"><span>Sunday</span><span>9:00 AM – 7:00 PM</span></div>
     </div>
     <div class="info-card light">
       <h3><span class="icon-chip">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
       </span>Coverage Zone</h3>
-      <p>We service a 20-mile radius around DeKalb, IL — including surrounding suburbs and office parks. Not sure if you're in range? Just call or text and we'll confirm in seconds.</p>
-      <div class="radius-badge"><span class="dot"></span>20-mile radius around DeKalb, IL</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== REVIEWS ===================== -->
-<section class="section-pad">
-  <div class="wrap">
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <blockquote>"Saved me a trip to the shop. Fast, clean, and fair pricing!"</blockquote>
-      <cite>— Sarah M., Google Review</cite>
+      <p>We service a 20-mile radius around DeKalb, Peru, and surrounding areas — including nearby suburbs and office parks. Beyond that, an additional $1.75 per mile applies. Not sure if you're in range? Just call or text and we'll confirm in seconds.</p>
+      <div class="radius-badge"><span class="dot"></span>20-mile radius around DeKalb &amp; Peru, IL (+$1.75/mi beyond)</div>
     </div>
   </div>
 </section>
@@ -818,17 +845,17 @@
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="logo.svg" alt="" onerror="this.style.display='none'">
-        Jayus Mobile Mechanic
+        <img src="logo.svg?v=2" alt="" onerror="this.style.display='none'">
+        Jayus Mobile Care
       </div>
       <div class="footer-links">
         <a href="#services">Services</a>
         <a href="tel:8158143360">(815) 814-3360</a>
-        <a href="#" class="book-btn">Book Appointment</a>
+        <a href="#" class="book-btn">Get a Free Quote</a>
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; <span id="year"></span> Jayus Mobile Mechanic. All rights reserved.
+      &copy; <span id="year"></span> Jayus Mobile Care. All rights reserved.
     </div>
   </div>
 </footer>
@@ -838,67 +865,127 @@
   <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-header">
       <div>
-        <h3 id="modalTitle">Book Your Appointment</h3>
-        <p>Takes about a minute — we'll text to confirm</p>
+        <h3 id="modalTitle">Get Your Free Quote</h3>
+        <p>Takes about a minute — we'll text you back shortly</p>
       </div>
-      <button class="modal-close" id="modalCloseBtn" aria-label="Close booking form">✕</button>
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close quote request form">✕</button>
     </div>
     <div class="modal-body" id="modalBody">
-      <form id="bookingForm" novalidate>
+      <form id="bookingForm" action="https://formspree.io/f/mbgjavbq" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New Quote Request — Jayus Mobile Care">
 
-        <div class="field-group">
-          <span class="block-label">Vehicle Details</span>
-          <div class="field-row">
-            <input type="text" name="year" placeholder="Year" required inputmode="numeric" maxlength="4">
-            <input type="text" name="make" placeholder="Make" required>
-            <input type="text" name="model" placeholder="Model" required>
-          </div>
+        <div class="step-progress">
+          <div class="step-progress-track"><div class="step-progress-fill" id="stepProgressFill"></div></div>
+          <p class="step-progress-label" id="stepProgressLabel">Step 1 of 4 — Contact Info</p>
         </div>
 
-        <div class="field-group">
-          <span class="block-label">Select Service(s)</span>
-          <div class="checkbox-list">
-            <label class="checkbox-item">
-              <span class="cb-label"><input type="checkbox" name="service" value="Synthetic Oil Change ($89)"> Synthetic Oil Change</span>
-              <span class="cb-price">$89</span>
-            </label>
-            <label class="checkbox-item">
-              <span class="cb-label"><input type="checkbox" name="service" value="Brakes ($149+)"> Brakes</span>
-              <span class="cb-price">$149+</span>
-            </label>
-            <label class="checkbox-item">
-              <span class="cb-label"><input type="checkbox" name="service" value="Wiper Blades ($35)"> Wiper Blades</span>
-              <span class="cb-price">$35</span>
-            </label>
-            <label class="checkbox-item">
-              <span class="cb-label"><input type="checkbox" name="service" value="Diagnostic ($75)"> Diagnostic</span>
-              <span class="cb-price">$75</span>
-            </label>
-          </div>
-        </div>
+        <p class="required-legend"><span class="req-star">*</span> Required field</p>
 
-        <div class="field-group">
-          <span class="block-label">Location &amp; Preferred Time</span>
-          <input type="text" name="address" placeholder="Service address" required style="margin-bottom:10px;">
-          <div class="field-row two" style="margin-bottom:10px;">
-            <input type="date" name="date" required>
-            <div class="radio-group">
-              <label class="radio-pill"><input type="radio" name="timeslot" value="Morning" required> Morning</label>
-              <label class="radio-pill"><input type="radio" name="timeslot" value="Afternoon"> Afternoon</label>
+        <div class="form-step active" data-step="1">
+          <div class="field-group">
+            <span class="block-label">Contact Info</span>
+            <div class="field-row two" style="margin-bottom:10px;">
+              <input type="text" name="full_name" placeholder="Full name *" required>
+              <input type="tel" name="phone" placeholder="Phone number *" required>
             </div>
+            <p class="field-helper">We send quotes via text for fast response</p>
+            <input type="email" name="email" placeholder="Email address *" required>
+          </div>
+          <div class="step-nav">
+            <button type="button" class="btn btn-primary step-continue">Continue</button>
           </div>
         </div>
 
-        <div class="field-group">
-          <span class="block-label">Contact Details</span>
-          <div class="field-row two">
-            <input type="text" name="fullname" placeholder="Full name" required>
-            <input type="tel" name="phone" placeholder="Mobile phone number" required>
+        <div class="form-step" data-step="2">
+          <div class="field-group">
+            <span class="block-label">Vehicle Details</span>
+            <input type="text" name="vin" id="vinInput" placeholder="VIN (optional — gets exact engine specs)" maxlength="17" style="margin-bottom:6px;">
+            <p class="field-helper" id="vinStatus">Found on your dashboard, door jamb sticker, insurance card, or registration.</p>
+            <input type="hidden" name="vin_decoded_vehicle" id="vinDecodedVehicle">
+            <input type="hidden" name="vin_displacement_l" id="vinDisplacement">
+            <input type="hidden" name="vin_cylinders" id="vinCylinders">
+            <input type="hidden" name="vin_fuel_type" id="vinFuelType">
+            <div class="field-row" style="margin-bottom:6px;">
+              <input type="text" name="year" placeholder="Year *" required inputmode="numeric" maxlength="4">
+              <select name="make" id="makeSelect" required>
+                <option value="" disabled selected>Make *</option>
+              </select>
+              <select name="model" id="modelSelect" required disabled>
+                <option value="" disabled selected>Select make first</option>
+              </select>
+            </div>
+            <div id="makeOtherWrap" style="display:none; margin-bottom:6px;">
+              <input type="text" name="make_other" id="makeOtherInput" placeholder="Please specify make *">
+            </div>
+            <div id="modelOtherWrap" style="display:none; margin-bottom:6px;">
+              <input type="text" name="model_other" id="modelOtherInput" placeholder="Please specify model *">
+            </div>
+            <input type="text" name="engine" placeholder="Engine (optional) — e.g. 2.0L" style="margin-bottom:6px;">
+            <input type="text" name="mileage" placeholder="Approximate mileage (optional)" inputmode="numeric">
+          </div>
+          <div class="step-nav">
+            <button type="button" class="btn btn-outline-navy step-back">Back</button>
+            <button type="button" class="btn btn-primary step-continue">Continue</button>
           </div>
         </div>
 
-        <p class="required-hint">We'll text you to confirm exact arrival time.</p>
-        <button type="submit" class="btn btn-primary modal-submit">Confirm Booking</button>
+        <div class="form-step" data-step="3">
+          <div class="field-group">
+            <span class="block-label">Services Needed</span>
+            <div class="checkbox-list">
+              <label class="checkbox-item">
+                <span class="cb-label"><input type="checkbox" name="services[]" value="Oil & Filter Change"> Oil &amp; Filter Change</span>
+              </label>
+              <label class="checkbox-item">
+                <span class="cb-label"><input type="checkbox" name="services[]" value="Brake Service (Pads / Rotors)"> Brake Service (Pads / Rotors)</span>
+              </label>
+              <label class="checkbox-item">
+                <span class="cb-label"><input type="checkbox" name="services[]" value="Serpentine Belt Replacement"> Serpentine Belt Replacement</span>
+              </label>
+              <label class="checkbox-item">
+                <span class="cb-label"><input type="checkbox" name="services[]" value="Engine or Cabin Air Filter"> Engine or Cabin Air Filter</span>
+              </label>
+              <label class="checkbox-item">
+                <span class="cb-label"><input type="checkbox" name="services[]" value="Minor Part Replacement"> Minor Part Replacement (Bulbs, Battery, Wipers, Window Assembly, etc.)</span>
+              </label>
+              <label class="checkbox-item">
+                <span class="cb-label"><input type="checkbox" name="services[]" value="Other Specific Service"> Other Specific Service</span>
+              </label>
+            </div>
+            <div class="notice-box">Notice: We perform routine maintenance and known part replacements. We do not provide diagnostic services.</div>
+            <textarea name="details" rows="3" placeholder="Additional details or specific part needed"></textarea>
+          </div>
+          <div class="step-nav">
+            <button type="button" class="btn btn-outline-navy step-back">Back</button>
+            <button type="button" class="btn btn-primary step-continue">Continue</button>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="4">
+          <div class="field-group">
+            <span class="block-label">Service Location</span>
+            <p class="field-helper" style="margin-top:0;">Service area <span class="req-star">*</span></p>
+            <div class="radio-group" style="margin-bottom:10px;">
+              <label class="radio-pill"><input type="radio" name="service_area" value="DeKalb & Surrounding Area" required> DeKalb &amp; Surrounding Area</label>
+              <label class="radio-pill"><input type="radio" name="service_area" value="Peru & Surrounding Area"> Peru &amp; Surrounding Area</label>
+            </div>
+            <p class="field-helper" style="margin-top:-4px;">Select whichever is closer to you. Outside our core 20-mile zones? No problem — an extra $1.75/mile applies beyond that, and we'll confirm the total with your quote.</p>
+            <div class="field-row two" style="margin-bottom:10px;">
+              <input type="text" name="address" placeholder="Street address *" required>
+              <input type="text" name="zip_code" placeholder="ZIP code *" required inputmode="numeric" maxlength="10">
+            </div>
+            <select name="location_type" required>
+              <option value="" disabled selected>Location type *</option>
+              <option value="Home">Home</option>
+              <option value="Work">Work</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="step-nav">
+            <button type="button" class="btn btn-outline-navy step-back">Back</button>
+            <button type="submit" class="btn btn-primary modal-submit">Request My Free Quote</button>
+          </div>
+        </div>
       </form>
     </div>
   </div>
@@ -913,6 +1000,295 @@
   let lastFocused = null;
 
   const ORIGINAL_MODAL_BODY = modalBody.innerHTML;
+
+  let CACHED_MAKES = null;
+  const CACHED_MODELS = {};
+  const OTHER_VALUE = "Other / Not Listed";
+  const VEHICLE_TYPES_FOR_MAKES = ["car", "truck", "multipurpose passenger vehicle (mpv)"];
+
+  function toTitleCase(str){
+    return str.toLowerCase().replace(/(^|[\s-])\w/g, function(match){
+      return match.toUpperCase();
+    });
+  }
+
+  function fillMakeOptions(makeSelect, names){
+    makeSelect.innerHTML = '';
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.disabled = true;
+    placeholder.selected = true;
+    placeholder.textContent = 'Make *';
+    makeSelect.appendChild(placeholder);
+    names.forEach(function(name){
+      const opt = document.createElement('option');
+      opt.value = name;
+      opt.textContent = name;
+      makeSelect.appendChild(opt);
+    });
+    const otherOpt = document.createElement('option');
+    otherOpt.value = OTHER_VALUE;
+    otherOpt.textContent = OTHER_VALUE;
+    makeSelect.appendChild(otherOpt);
+    makeSelect.disabled = false;
+    makeSelect.selectedIndex = 0;
+  }
+
+  function fillModelOptions(modelSelect, names){
+    modelSelect.innerHTML = '';
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.disabled = true;
+    placeholder.selected = true;
+    placeholder.textContent = names.length ? 'Model *' : 'Select model below';
+    modelSelect.appendChild(placeholder);
+    names.forEach(function(name){
+      const opt = document.createElement('option');
+      opt.value = name;
+      opt.textContent = name;
+      modelSelect.appendChild(opt);
+    });
+    const otherOpt = document.createElement('option');
+    otherOpt.value = OTHER_VALUE;
+    otherOpt.textContent = OTHER_VALUE;
+    modelSelect.appendChild(otherOpt);
+    modelSelect.disabled = false;
+    modelSelect.selectedIndex = 0;
+  }
+
+  async function populateMakeDropdown(form){
+    const makeSelect = form.querySelector('#makeSelect');
+    if(!makeSelect) return;
+
+    if(CACHED_MAKES){
+      fillMakeOptions(makeSelect, CACHED_MAKES);
+      return;
+    }
+
+    makeSelect.innerHTML = '<option value="" disabled selected>Loading makes…</option>';
+    makeSelect.disabled = true;
+
+    try{
+      const responses = await Promise.all(VEHICLE_TYPES_FOR_MAKES.map(function(type){
+        return fetch('https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/' + encodeURIComponent(type) + '?format=json')
+          .then(function(r){ return r.json(); });
+      }));
+
+      const nameSet = new Set();
+      responses.forEach(function(res){
+        (res.Results || []).forEach(function(item){
+          if(item.MakeName) nameSet.add(toTitleCase(item.MakeName.trim()));
+        });
+      });
+
+      const sorted = Array.from(nameSet).sort(function(a,b){ return a.localeCompare(b); });
+      CACHED_MAKES = sorted;
+      fillMakeOptions(makeSelect, sorted);
+    } catch(err){
+      fillMakeOptions(makeSelect, []);
+    }
+  }
+
+  async function loadModelsForMake(modelSelect, make){
+    modelSelect.disabled = true;
+    modelSelect.innerHTML = '<option value="" disabled selected>Loading models…</option>';
+
+    if(make === OTHER_VALUE){
+      fillModelOptions(modelSelect, []);
+      return [];
+    }
+
+    if(CACHED_MODELS[make]){
+      fillModelOptions(modelSelect, CACHED_MODELS[make]);
+      return CACHED_MODELS[make];
+    }
+
+    try{
+      const res = await fetch('https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMake/' + encodeURIComponent(make) + '?format=json')
+        .then(function(r){ return r.json(); });
+
+      const nameSet = new Set();
+      (res.Results || []).forEach(function(item){
+        if(item.Model_Name) nameSet.add(item.Model_Name.trim());
+      });
+
+      const sorted = Array.from(nameSet).sort(function(a,b){ return a.localeCompare(b); });
+      CACHED_MODELS[make] = sorted;
+      fillModelOptions(modelSelect, sorted);
+      return sorted;
+    } catch(err){
+      fillModelOptions(modelSelect, []);
+      return [];
+    }
+  }
+
+  function findMatchingOptionValue(selectEl, targetText){
+    if(!targetText) return null;
+    const target = targetText.trim().toLowerCase();
+    const options = Array.from(selectEl.options);
+    for(let i=0; i<options.length; i++){
+      const opt = options[i];
+      if(opt.value && opt.value !== OTHER_VALUE && opt.value.trim().toLowerCase() === target){
+        return opt.value;
+      }
+    }
+    return null;
+  }
+
+  async function decodeVin(form){
+    const vinInput = form.querySelector('#vinInput');
+    const statusEl = form.querySelector('#vinStatus');
+    if(!vinInput || !statusEl) return;
+
+    const vin = vinInput.value.trim().toUpperCase();
+    const defaultHelperText = 'Found on your dashboard, door jamb sticker, insurance card, or registration.';
+
+    if(!vin){
+      statusEl.textContent = defaultHelperText;
+      statusEl.className = 'field-helper';
+      return;
+    }
+
+    if(vin.length !== 17){
+      statusEl.textContent = 'A VIN is 17 characters — double check and try again, or just skip it.';
+      statusEl.className = 'field-helper vin-error';
+      return;
+    }
+
+    statusEl.textContent = 'Looking up VIN…';
+    statusEl.className = 'field-helper vin-loading';
+
+    try{
+      const res = await fetch('https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvalues/' + encodeURIComponent(vin) + '?format=json')
+        .then(function(r){ return r.json(); });
+      const result = res.Results && res.Results[0];
+
+      if(!result || !result.Make){
+        statusEl.textContent = "Couldn't decode that VIN — no problem, just fill in the details below.";
+        statusEl.className = 'field-helper vin-error';
+        return;
+      }
+
+      const makeName = toTitleCase((result.Make || '').toLowerCase());
+      const summaryParts = [result.ModelYear, makeName, result.Model, result.Trim].filter(Boolean);
+      const engineBits = [];
+      if(result.DisplacementL) engineBits.push(result.DisplacementL + 'L');
+      if(result.EngineCylinders) engineBits.push(result.EngineCylinders + '-cyl');
+      if(result.FuelTypePrimary) engineBits.push(result.FuelTypePrimary);
+
+      form.querySelector('#vinDecodedVehicle').value = summaryParts.join(' ');
+      form.querySelector('#vinDisplacement').value = result.DisplacementL || '';
+      form.querySelector('#vinCylinders').value = result.EngineCylinders || '';
+      form.querySelector('#vinFuelType').value = result.FuelTypePrimary || '';
+
+      statusEl.textContent = '✓ Detected: ' + summaryParts.join(' ') + (engineBits.length ? ' — ' + engineBits.join(' ') : '');
+      statusEl.className = 'field-helper vin-success';
+
+      const yearInput = form.querySelector('[name="year"]');
+      if(yearInput && !yearInput.value && result.ModelYear) yearInput.value = result.ModelYear;
+
+      const engineInput = form.querySelector('[name="engine"]');
+      if(engineInput && !engineInput.value && engineBits.length) engineInput.value = engineBits.join(', ');
+
+      const makeSelect = form.querySelector('#makeSelect');
+      const modelSelect = form.querySelector('#modelSelect');
+      const makeOtherWrap = form.querySelector('#makeOtherWrap');
+      const makeOtherInput = form.querySelector('#makeOtherInput');
+      const modelOtherWrap = form.querySelector('#modelOtherWrap');
+      const modelOtherInput = form.querySelector('#modelOtherInput');
+
+      if(makeSelect && modelSelect){
+        if(!CACHED_MAKES){
+          await populateMakeDropdown(form);
+        }
+
+        const matchedMakeValue = findMatchingOptionValue(makeSelect, makeName);
+
+        if(matchedMakeValue){
+          makeSelect.value = matchedMakeValue;
+          makeSelect.classList.remove('field-invalid');
+          if(makeOtherWrap){ makeOtherWrap.style.display = 'none'; }
+          if(makeOtherInput){ makeOtherInput.required = false; makeOtherInput.value = ''; }
+
+          const models = await loadModelsForMake(modelSelect, matchedMakeValue);
+          const matchedModelValue = findMatchingOptionValue(modelSelect, result.Model);
+
+          if(matchedModelValue){
+            modelSelect.value = matchedModelValue;
+            modelSelect.classList.remove('field-invalid');
+            if(modelOtherWrap){ modelOtherWrap.style.display = 'none'; }
+            if(modelOtherInput){ modelOtherInput.required = false; modelOtherInput.value = ''; }
+          } else if(result.Model){
+            modelSelect.value = OTHER_VALUE;
+            modelSelect.classList.remove('field-invalid');
+            if(modelOtherWrap){ modelOtherWrap.style.display = 'block'; }
+            if(modelOtherInput){ modelOtherInput.required = true; modelOtherInput.value = result.Model; }
+          }
+        } else {
+          makeSelect.value = OTHER_VALUE;
+          makeSelect.classList.remove('field-invalid');
+          if(makeOtherWrap){ makeOtherWrap.style.display = 'block'; }
+          if(makeOtherInput){ makeOtherInput.required = true; makeOtherInput.value = makeName; }
+
+          await loadModelsForMake(modelSelect, OTHER_VALUE);
+          if(result.Model){
+            modelSelect.value = OTHER_VALUE;
+            modelSelect.classList.remove('field-invalid');
+            if(modelOtherWrap){ modelOtherWrap.style.display = 'block'; }
+            if(modelOtherInput){ modelOtherInput.required = true; modelOtherInput.value = result.Model; }
+          }
+        }
+      }
+
+    } catch(err){
+      statusEl.textContent = "Couldn't reach VIN lookup right now — just fill in the details below.";
+      statusEl.className = 'field-helper vin-error';
+    }
+  }
+
+  function wireVinLookup(form){
+    const vinInput = form.querySelector('#vinInput');
+    if(!vinInput) return;
+    vinInput.addEventListener('input', function(){
+      vinInput.value = vinInput.value.toUpperCase();
+    });
+    vinInput.addEventListener('blur', function(){
+      decodeVin(form);
+    });
+  }
+
+  function wireMakeModelLogic(form){
+    const makeSelect = form.querySelector('#makeSelect');
+    const modelSelect = form.querySelector('#modelSelect');
+    const makeOtherWrap = form.querySelector('#makeOtherWrap');
+    const makeOtherInput = form.querySelector('#makeOtherInput');
+    const modelOtherWrap = form.querySelector('#modelOtherWrap');
+    const modelOtherInput = form.querySelector('#modelOtherInput');
+    if(!makeSelect || !modelSelect) return;
+
+    makeSelect.addEventListener('change', function(){
+      const selectedMake = makeSelect.value;
+
+      const isOtherMake = selectedMake === OTHER_VALUE;
+      makeOtherWrap.style.display = isOtherMake ? 'block' : 'none';
+      makeOtherInput.required = isOtherMake;
+      if(!isOtherMake) makeOtherInput.value = '';
+
+      modelOtherWrap.style.display = 'none';
+      modelOtherInput.required = false;
+      modelOtherInput.value = '';
+
+      loadModelsForMake(modelSelect, selectedMake);
+    });
+
+    modelSelect.addEventListener('change', function(){
+      const isOtherModel = modelSelect.value === OTHER_VALUE;
+      modelOtherWrap.style.display = isOtherModel ? 'block' : 'none';
+      modelOtherInput.required = isOtherModel;
+      if(!isOtherModel) modelOtherInput.value = '';
+    });
+  }
+
 
   function openModal(){
     lastFocused = document.activeElement;
@@ -936,29 +1312,171 @@
     }, 200);
   }
 
+  function highlightInvalidFields(form){
+    const invalidEls = form.querySelectorAll(':invalid');
+    invalidEls.forEach(function(el){
+      if(el.type === 'radio'){
+        const group = el.closest('.radio-group');
+        if(group) group.classList.add('field-invalid');
+      } else if(el.type === 'checkbox'){
+        return;
+      } else {
+        el.classList.add('field-invalid');
+      }
+    });
+  }
+
+  function clearInvalidHighlights(form){
+    form.querySelectorAll('.field-invalid').forEach(function(el){
+      el.classList.remove('field-invalid');
+    });
+  }
+
+  function wireLiveValidationClearing(form){
+    form.querySelectorAll('input, select, textarea').forEach(function(el){
+      const eventType = (el.tagName === 'SELECT' || el.type === 'radio' || el.type === 'checkbox') ? 'change' : 'input';
+      el.addEventListener(eventType, function(){
+        if(el.type === 'radio'){
+          const group = el.closest('.radio-group');
+          if(group && el.checkValidity()) group.classList.remove('field-invalid');
+        } else if(el.checkValidity()){
+          el.classList.remove('field-invalid');
+        }
+      });
+    });
+  }
+
+  const STEP_TITLES = {1:'Contact Info', 2:'Vehicle Details', 3:'Services Needed', 4:'Service Location'};
+
+  function getFormSteps(form){
+    return Array.from(form.querySelectorAll('.form-step'));
+  }
+
+  function showStep(form, stepNumber){
+    const steps = getFormSteps(form);
+    steps.forEach(function(step){
+      step.classList.toggle('active', parseInt(step.dataset.step, 10) === stepNumber);
+    });
+    const total = steps.length;
+    const fill = form.querySelector('#stepProgressFill');
+    const label = form.querySelector('#stepProgressLabel');
+    if(fill) fill.style.width = (stepNumber / total * 100) + '%';
+    if(label) label.textContent = 'Step ' + stepNumber + ' of ' + total + ' — ' + (STEP_TITLES[stepNumber] || '');
+    const modalBodyEl = form.closest('.modal-body');
+    if(modalBodyEl) modalBodyEl.scrollTop = 0;
+  }
+
+  function validateStep(form, stepEl){
+    const fields = Array.from(stepEl.querySelectorAll('input, select, textarea'));
+    let allValid = true;
+    let firstInvalid = null;
+
+    fields.forEach(function(field){
+      if(field.disabled) return;
+      const isValid = field.checkValidity();
+      if(field.type === 'radio'){
+        const group = field.closest('.radio-group');
+        if(group) group.classList.toggle('field-invalid', !isValid);
+      } else if(field.type !== 'checkbox'){
+        field.classList.toggle('field-invalid', !isValid);
+      }
+      if(!isValid){
+        allValid = false;
+        if(!firstInvalid) firstInvalid = field;
+      }
+    });
+
+    if(firstInvalid) firstInvalid.reportValidity();
+    return allValid;
+  }
+
+  function wireStepNav(form){
+    form.querySelectorAll('.step-continue').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        const currentStep = btn.closest('.form-step');
+        if(!validateStep(form, currentStep)) return;
+        const currentIndex = parseInt(currentStep.dataset.step, 10);
+        showStep(form, currentIndex + 1);
+      });
+    });
+    form.querySelectorAll('.step-back').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        const currentStep = btn.closest('.form-step');
+        const currentIndex = parseInt(currentStep.dataset.step, 10);
+        showStep(form, currentIndex - 1);
+      });
+    });
+    showStep(form, 1);
+  }
+
   function attachFormHandler(){
     const form = document.getElementById('bookingForm');
     if(!form) return;
+
+    populateMakeDropdown(form);
+    wireMakeModelLogic(form);
+    wireVinLookup(form);
+    wireLiveValidationClearing(form);
+    wireStepNav(form);
+
     form.addEventListener('submit', function(e){
       e.preventDefault();
+
+      clearInvalidHighlights(form);
+
       if(!form.checkValidity()){
+        highlightInvalidFields(form);
         form.reportValidity();
         return;
       }
-      modalBody.innerHTML = `
-        <div class="success-state">
-          <div class="success-icon">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <h3>Thank you!</h3>
-          <p>Your appointment request has been received. We will text you shortly to confirm.</p>
-          <button type="button" class="btn btn-outline-navy" id="successCloseBtn">Close</button>
-        </div>
-      `;
-      const successClose = document.getElementById('successCloseBtn');
-      if(successClose){
-        successClose.addEventListener('click', closeModal);
+
+      const submitBtn = form.querySelector('.modal-submit');
+      const originalBtnText = submitBtn ? submitBtn.textContent : '';
+      if(submitBtn){
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
       }
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(response){
+        if(response.ok){
+          modalBody.innerHTML = `
+            <div class="success-state">
+              <div class="success-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h3>Thank you!</h3>
+              <p>Your quote request has been received. We will text or call you shortly with pricing and to confirm a time.</p>
+              <button type="button" class="btn btn-outline-navy" id="successCloseBtn">Close</button>
+            </div>
+          `;
+          const successClose = document.getElementById('successCloseBtn');
+          if(successClose){
+            successClose.addEventListener('click', closeModal);
+          }
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(function(){
+        if(submitBtn){
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+        let errorEl = form.querySelector('.form-error');
+        if(!errorEl){
+          errorEl = document.createElement('p');
+          errorEl.className = 'form-error';
+          submitBtn.insertAdjacentElement('beforebegin', errorEl);
+        }
+        errorEl.textContent = "Something went wrong sending your request. Please call or text us at (815) 814-3360 instead.";
+      });
     });
   }
 
