@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Jayus Mobile Care LLC</title>
+<meta name="description" content="Privacy Policy for Jayus Mobile Care LLC, a mobile preventative maintenance service serving DeKalb, IL, Peru, IL, and surrounding areas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #18273B;
+    --navy-2: #223349;
+    --orange: #F18A00;
+    --orange-dark: #D97900;
+    --yellow: #FFC700;
+    --white: #FFFFFF;
+    --grey: #F8FAFC;
+    --line: #E4E9F0;
+    --text-soft: #56657A;
+    --radius: 14px;
+    --shadow: 0 10px 30px rgba(24,39,59,0.08);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    font-family:'Inter', system-ui, sans-serif;
+    color: var(--navy);
+    background: var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Space Grotesk', 'Inter', sans-serif;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color: var(--orange); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .wrap{ max-width:820px; margin:0 auto; padding:0 24px; }
+
+  header.site-header{
+    position: sticky;
+    top:0;
+    z-index:60;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    max-width:1180px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 24px;
+    gap:16px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:700;
+    font-size:19px;
+    font-family:'Space Grotesk', sans-serif;
+    color:var(--navy);
+  }
+  .brand img{ height:64px; width:auto; }
+  .brand small{
+    display:block;
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color: var(--orange);
+    margin-top:2px;
+  }
+  .header-actions{ display:flex; align-items:center; gap:16px; }
+  .call-link{
+    display:flex; align-items:center; gap:8px;
+    font-weight:600; font-size:14.5px; color:var(--navy); white-space:nowrap;
+  }
+  .call-link:hover{ color: var(--orange); text-decoration:none; }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:11px 20px; border-radius:10px; font-weight:600; font-size:14.5px;
+    background: var(--orange); color: var(--white); white-space:nowrap;
+    transition: background .2s ease;
+  }
+  .btn:hover{ background: var(--orange-dark); text-decoration:none; }
+
+  @media (max-width:560px){
+    .brand span.name{ display:none; }
+    .brand img{ height:48px; }
+  }
+  @media (max-width:420px){
+    .call-link .call-text{ display:none; }
+  }
+
+  .page-hero{
+    background: var(--navy);
+    color: var(--white);
+    padding:56px 0 40px;
+  }
+  .page-hero .kicker{
+    display:block;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color: var(--yellow);
+    margin-bottom:10px;
+  }
+  .page-hero h1{ font-size:clamp(1.8rem, 4vw, 2.6rem); font-weight:700; }
+  .page-hero p{ margin-top:12px; color: rgba(255,255,255,0.75); font-size:15px; }
+
+  .legal-content{ padding:48px 0 80px; }
+  .legal-content section{ margin-bottom:38px; }
+  .legal-content h2{
+    font-size:20px;
+    font-weight:700;
+    color: var(--navy);
+    margin-bottom:14px;
+    padding-bottom:10px;
+    border-bottom:2px solid var(--line);
+  }
+  .legal-content h2 span.num{ color: var(--orange); margin-right:8px; }
+  .legal-content p{ font-size:15px; line-height:1.75; color: var(--text-soft); margin:0 0 14px; }
+  .legal-content ul{ margin:0 0 14px; padding-left:22px; }
+  .legal-content li{ font-size:15px; line-height:1.75; color: var(--text-soft); margin-bottom:6px; }
+  .legal-content strong{ color: var(--navy); }
+  .callout{
+    background: var(--grey);
+    border:1px solid var(--line);
+    border-left:4px solid var(--orange);
+    border-radius:10px;
+    padding:16px 18px;
+    margin:0 0 14px;
+  }
+  .callout p{ margin:0; color: var(--navy); font-size:14.5px; }
+  .toc{
+    background: var(--grey);
+    border:1px solid var(--line);
+    border-radius: var(--radius);
+    padding:20px 24px;
+    margin-bottom:44px;
+  }
+  .toc h3{ font-size:14px; font-weight:700; margin-bottom:10px; }
+  .toc ol{ margin:0; padding-left:20px; columns:2; gap:24px; }
+  .toc li{ font-size:14px; margin-bottom:8px; break-inside:avoid; }
+  .toc a{ color: var(--navy); font-weight:600; }
+  .toc a:hover{ color: var(--orange); }
+  @media (max-width:560px){ .toc ol{ columns:1; } }
+
+  footer{ background: var(--navy); color: rgba(255,255,255,0.7); padding:36px 0 26px; }
+  .footer-inner{
+    display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;
+    gap:16px; padding-bottom:20px; border-bottom:1px solid rgba(255,255,255,0.12); margin-bottom:18px;
+  }
+  .footer-brand{ display:flex; align-items:center; gap:10px; color:var(--white); font-weight:700; font-family:'Space Grotesk', sans-serif; font-size:16px; }
+  .footer-brand img{ height:34px; width:auto; }
+  .footer-links{ display:flex; gap:20px; flex-wrap:wrap; font-size:14px; }
+  .footer-links a{ color: rgba(255,255,255,0.75); margin-right:2px; }
+  .footer-links a:hover{ color: var(--white); }
+  .footer-bottom{ font-size:13px; text-align:center; color: rgba(255,255,255,0.45); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand" style="text-decoration:none;">
+      <img src="logo.svg?v=2" alt="Jayus Mobile Care logo" onerror="this.style.display='none'">
+      <div>
+        <span class="name">Jayus Mobile Care</span>
+        <small>We Come To You</small>
+      </div>
+    </a>
+    <div class="header-actions">
+      <a class="call-link" href="tel:8155010079" aria-label="Call (815) 501-0079">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="call-text">(815) 501-0079</span>
+      </a>
+      <a href="index.html" class="btn">Back to Home</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Legal</span>
+    <h1>Privacy Policy</h1>
+    <p>Last updated: September 7, 2026 · Jayus Mobile Care LLC</p>
+  </div>
+</section>
+
+<main class="legal-content">
+  <div class="wrap">
+
+    <section style="margin-bottom:38px;">
+      <h2 style="border-bottom:none; padding-bottom:0;">Privacy Notice</h2>
+      <p>This Privacy Notice for <strong>Jayus Mobile Care LLC</strong> ("we," "us," or "our") describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you visit our website, request a quote, or otherwise contact us in connection with our mobile automotive preventative maintenance services.</p>
+      <p><strong>Questions or concerns?</strong> Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services.</p>
+    </section>
+
+    <section style="margin-bottom:38px;">
+      <h2 style="border-bottom:none; padding-bottom:0;">Summary of Key Points</h2>
+      <p><em>This summary provides key points from our Privacy Notice, but you can find out more details about any of these topics by using the table of contents below to find the section you are looking for.</em></p>
+      <p><strong>What personal information do we process?</strong> When you request a quote or contact us, we may process your full name, phone number, email address, vehicle information (Year, Make, Model, and VIN where provided), and service address. See <a href="#collect">What Information Do We Collect?</a></p>
+      <p><strong>Do we process any sensitive personal information?</strong> Some information may be considered "special" or "sensitive" in certain jurisdictions, for example racial or ethnic origins, sexual orientation, and religious beliefs. We do not process sensitive personal information.</p>
+      <p><strong>Do we collect any information from third parties?</strong> We do not purchase or collect information about you from public databases, marketing partners, or social media platforms.</p>
+      <p><strong>How do we process your information?</strong> We process your information to provide and administer our Services — including preparing quotes, scheduling appointments, sending digital receipts and invoices, and following up for feedback — and to comply with law. See <a href="#process">How Do We Process Your Information?</a></p>
+      <p><strong>In what situations and with which parties do we share personal information?</strong> We do not sell or share your personal information with third parties for marketing purposes. See <a href="#share">When and With Whom Do We Share Your Personal Information?</a></p>
+      <p><strong>What are your rights?</strong> Depending on where you are located, you may have certain rights regarding your personal information, including the right to request access, correction, or deletion. See <a href="#rights">What Are Your Privacy Rights?</a></p>
+      <p><strong>How do you exercise your rights?</strong> The easiest way to exercise your rights is by contacting us directly using the information in <a href="#contact">How Can You Contact Us About This Notice?</a> We will consider and act upon any request in accordance with applicable data protection laws.</p>
+    </section>
+
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ol>
+        <li><a href="#collect">What Information Do We Collect?</a></li>
+        <li><a href="#process">How Do We Process Your Information?</a></li>
+        <li><a href="#share">When and With Whom Do We Share Your Personal Information?</a></li>
+        <li><a href="#cookies">Do We Use Cookies and Other Tracking Technologies?</a></li>
+        <li><a href="#sociallogins">How Do We Handle Your Social Logins?</a></li>
+        <li><a href="#international">Is Your Information Transferred Internationally?</a></li>
+        <li><a href="#retention">How Long Do We Keep Your Information?</a></li>
+        <li><a href="#minors">Do We Collect Information From Minors?</a></li>
+        <li><a href="#rights">What Are Your Privacy Rights?</a></li>
+        <li><a href="#dnt">Controls for Do-Not-Track Features</a></li>
+        <li><a href="#updates">Do We Make Updates to This Notice?</a></li>
+        <li><a href="#contact">How Can You Contact Us About This Notice?</a></li>
+        <li><a href="#review">How Can You Review, Update, or Delete the Data We Collect From You?</a></li>
+      </ol>
+    </div>
+
+    <section id="collect">
+      <h2><span class="num">1.</span>What Information Do We Collect?</h2>
+      <h3 style="font-size:16px; margin-bottom:8px;">Personal information you disclose to us</h3>
+      <p>We collect personal information that you voluntarily provide to us when you request a quote, express an interest in our services, or otherwise contact us. The personal information we collect depends on the context of your interactions with us, but may include:</p>
+      <ul>
+        <li>Full name</li>
+        <li>Mobile phone number</li>
+        <li>Email address</li>
+        <li>Vehicle information (Year, Make, Model, and VIN where provided)</li>
+        <li>Service address</li>
+      </ul>
+      <p><strong>Sensitive Information.</strong> We do not process sensitive information.</p>
+      <p>All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.</p>
+      <h3 style="font-size:16px; margin-bottom:8px;">Information automatically collected</h3>
+      <p>We automatically collect certain information when you visit, use, or navigate the Services. This information does not reveal your specific identity (like your name or contact information) but may include device and usage information, such as your IP address, browser and device characteristics, operating system, language preferences, referring URLs, device name, country, location, information about how and when you use our Services, and other technical information. This information is primarily needed to maintain the security and operation of our Services, and for our internal analytics and reporting purposes.</p>
+    </section>
+
+    <section id="process">
+      <h2><span class="num">2.</span>How Do We Process Your Information?</h2>
+      <p>We process your personal information for a variety of reasons, depending on how you interact with our Services, including to:</p>
+      <ul>
+        <li>Prepare and send you a quote for requested services;</li>
+        <li>Schedule and confirm your appointment by phone or text;</li>
+        <li>Send you a digital receipt or invoice after service is completed;</li>
+        <li>Occasionally follow up to request feedback or a rating about your service experience; and</li>
+        <li>Maintain the security and proper functioning of our Services.</li>
+      </ul>
+    </section>
+
+    <section id="share">
+      <h2><span class="num">3.</span>When and With Whom Do We Share Your Personal Information?</h2>
+      <p>We may need to share your personal information in the following limited situations:</p>
+      <ul>
+        <li><strong>Service Providers.</strong> We may share information with vendors who help us operate our business, such as payment processors, text-messaging and form-submission platforms, and scheduling tools — solely to help us provide our Services to you.</li>
+        <li><strong>Business Transfers.</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</li>
+        <li><strong>Legal Requirements.</strong> We may disclose your information where required to do so by law or in response to valid requests by public authorities.</li>
+      </ul>
+    </section>
+
+    <section id="cookies">
+      <h2><span class="num">4.</span>Do We Use Cookies and Other Tracking Technologies?</h2>
+      <p>We may use cookies and similar tracking technologies to gather information when you interact with our Services. These technologies help us maintain the security of our Services, prevent crashes, fix bugs, and assist with basic site functions, such as our online quote-request form. We do not use tracking technologies for third-party advertising.</p>
+    </section>
+
+    <section id="sociallogins">
+      <h2><span class="num">5.</span>How Do We Handle Your Social Logins?</h2>
+      <p>Our Services do not offer the ability to register or log in using a third-party social media account. This section does not apply to our Services.</p>
+    </section>
+
+    <section id="international">
+      <h2><span class="num">6.</span>Is Your Information Transferred Internationally?</h2>
+      <p>Our website and service providers are located in the United States. If you access our Services from outside the United States, please be aware that your information may be transferred to, stored, and processed by us and our service providers in the United States, where data protection laws may differ from those in your country. By using our Services, you consent to this transfer.</p>
+    </section>
+
+    <section id="retention">
+      <h2><span class="num">7.</span>How Long Do We Keep Your Information?</h2>
+      <p>We will only keep your personal information for as long as it is necessary for the purposes set out in this Privacy Notice — such as providing quotes, completing service, and maintaining service records — unless a longer retention period is required or permitted by law (such as tax or accounting requirements). When we have no ongoing legitimate business need to process your personal information, we will delete or anonymize it, or, if that is not possible, securely store it and isolate it from further processing until deletion is possible.</p>
+    </section>
+
+    <section id="minors">
+      <h2><span class="num">8.</span>Do We Collect Information From Minors?</h2>
+      <p>We do not knowingly collect, solicit data from, or market to children under 18 years of age, nor do we knowingly sell such personal information. By using the Services, you represent that you are at least 18, or that you are the parent or legal guardian of a minor vehicle owner and consent to and take responsibility for that minor's use of our Services. If we learn that personal information from a person under 18 years of age has been collected, we will take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from a minor, please contact us using the information in <a href="#contact">How Can You Contact Us About This Notice?</a></p>
+    </section>
+
+    <section id="rights">
+      <h2><span class="num">9.</span>What Are Your Privacy Rights?</h2>
+      <p><strong>Withdrawing your consent:</strong> If we are relying on your consent to process your personal information, you have the right to withdraw your consent at any time by contacting us using the information in <a href="#contact">How Can You Contact Us About This Notice?</a> This will not affect the lawfulness of processing before its withdrawal.</p>
+      <p><strong>Opting out of communications:</strong> You may opt out of text messages at any time by replying <strong>STOP</strong>, and you may unsubscribe from non-essential emails at any time by contacting us directly.</p>
+      <p>If you would like to review, correct, or terminate your information with us, you can contact us using the information below. Upon your request, we will delete your information from our active records, though we may retain limited information where necessary to prevent fraud, troubleshoot issues, or comply with legal requirements.</p>
+    </section>
+
+    <section id="dnt">
+      <h2><span class="num">10.</span>Controls for Do-Not-Track Features</h2>
+      <p>Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy Notice.</p>
+    </section>
+
+    <section id="updates">
+      <h2><span class="num">11.</span>Do We Make Updates to This Notice?</h2>
+      <p>We may update this Privacy Notice from time to time. The updated version will be indicated by an updated "Last updated" date at the top of this Privacy Notice. We encourage you to review this Privacy Notice periodically to stay informed of how we are protecting your information.</p>
+    </section>
+
+    <section id="contact">
+      <h2><span class="num">12.</span>How Can You Contact Us About This Notice?</h2>
+      <p>If you have questions or comments about this notice, you may contact us at:</p>
+      <ul>
+        <li><strong>Jayus Mobile Care LLC</strong></li>
+        <li>Service Areas: DeKalb, IL · Peru, IL · surrounding regions</li>
+        <li>Phone: <a href="tel:8158143360">(815) 814-3360</a></li>
+        <li>Email: <a href="mailto:jorgea@jayusmobilecarellc.com">jorgea@jayusmobilecarellc.com</a></li>
+      </ul>
+    </section>
+
+    <section id="review">
+      <h2><span class="num">13.</span>How Can You Review, Update, or Delete the Data We Collect From You?</h2>
+      <p>Based on the applicable laws of your state, you may have the right to request access to the personal information we collect from you, details about how we have processed it, correction of inaccuracies, or deletion of your personal information. You may also have the right to withdraw your consent to our processing of your personal information. These rights may be limited in some circumstances by applicable law. To make any of these requests, please contact us directly using the information in <a href="#contact">How Can You Contact Us About This Notice?</a> above.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo.svg?v=2" alt="" onerror="this.style.display='none'">
+        Jayus Mobile Care
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="tel:8158143360">(815) 814-3360</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Jayus Mobile Care LLC. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
